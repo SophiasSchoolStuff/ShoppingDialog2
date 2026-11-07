@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Speaker Soundboard</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: white; /* space around image */
+      }
+
+      .stage {
+        position: relative;
+        width: 90vw;
+        max-width: 1500px;
+        aspect-ratio: 16/9;
+        background-image: url("resources/images/Dialog-1.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .speaker {
+        position: absolute;
+        width: 4vw;
+        height: 4vw;
+        min-width: 30px;
+        min-height: 30px;
+        max-width: 80px;
+        max-height: 80px;
+        cursor: pointer;
+        transform: translate(-50%, -50%); /* center on coordinates */
+        transition: transform 0.2s;
+      }
+
+      .speaker:hover {
+        transform: translate(-50%, -50%) scale(1.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stage">
+      <!-- Positions now RELATIVE TO IMAGE -->
+      <img
+        src="resources/images/speaker.png"
+        class="speaker"
+        style="left: 34%; top: 12%"
+        onclick="playSound('sound1')"
+      />
+      <img
+        src="resources/images/speaker.png"
+        class="speaker"
+        style="left: 65%; top: 12%"
+        onclick="playSound('sound2')"
+      />
+      <img
+        src="resources/images/speaker.png"
+        class="speaker"
+        style="left: 34%; top: 30%"
+        onclick="playSound('sound3')"
+      />
+      <img
+        src="resources/images/speaker.png"
+        class="speaker"
+        style="left: 65%; top: 30%"
+        onclick="playSound('sound13')"
+      />
+      <img
+        src="resources/images/speaker.png"
+        class="speaker"
+        style="left: 28%; top: 49%"
+        onclick="playSound('sound14')"
+      />
+      <img
+        src="resources/images/speaker.png"
+        class="speaker"
+        style="left: 23%; top: 49%"
+        onclick="playSound('sound6')"
+      />
+      <img
+        src="resources/images/speaker.png"
+        class="speaker"
+        style="left: 65%; top: 49%"
+        onclick="playSound('sound7')"
+      />
+      <img
+        src="resources/images/speaker.png"
+        class="speaker"
+        style="left: 34%; top: 67%"
+        onclick="playSound('sound11')"
+      />
+      <img
+        src="resources/images/speaker.png"
+        class="speaker"
+        style="left: 34%; top: 85%"
+        onclick="playSound('sound12')"
+      />
+      <img
+        src="resources/images/speaker.png"
+        class="speaker"
+        style="left: 65%; top: 67%"
+        onclick="playSound('sound12')"
+      />
+    </div>
+
+    <!-- Audio elements -->
+    <audio id="sound1" src="resources/audios/Hello.m4a"></audio>
+    <audio id="sound2" src="resources/audios/HelloCanIHelpYou.m4a"></audio>
+    <audio
+      id="sound3"
+      src="resources/audios/YesPleaseIWouldLikeThe.m4a"
+    ></audio>
+    <audio id="sound4" src="resources/audios/anythingElse.m4a"></audio>
+    <audio
+      id="sound5"
+      src="resources/audios/YesPleaseIWouldLikeThe.m4a"
+    ></audio>
+    <audio id="sound6" src="resources/audios/NoThankYou.m4a"></audio>
+    <audio id="sound7" src="resources/audios/HereYouAre.m4a"></audio>
+    <audio id="sound8" src="resources/audios/HowMuchIsIt.m4a"></audio>
+    <audio id="sound9" src="resources/audios/ItsXPounds.m4a"></audio>
+    <audio id="sound10" src="resources/audios/HereYouAre.m4a"></audio>
+    <audio id="sound11" src="resources/audios/ThankYou.m4a"></audio>
+    <audio id="sound12" src="resources/audios/goodBye.m4a"></audio>
+    <audio id="sound13" src="resources/audios/WouldYouLikeABag.m4a"></audio>
+    <audio id="sound14" src="resources/audios/YesPlease.m4a"></audio>
+
+    <script>
+      function playSound(id) {
+        const audio = document.getElementById(id);
+        audio.currentTime = 0;
+        audio.play();
+      }
+    </script>
+  </body>
+</html>
